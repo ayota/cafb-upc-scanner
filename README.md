@@ -9,12 +9,9 @@ All foods that CAFB takes in have UPC codes -- use this code to query a UPC data
 #App Development
 
 **Existing Apps**
-
-<a href="https://itunes.apple.com/us/app/freescanner/id560068210?mt=8">Free Scanner </a> 
-
-<a href="https://itunes.apple.com/us/app/open-food-facts/id588797948?mt=8">OpenFood Facts</a> 
-
-<a href="https://itunes.apple.com/us/app/fooducate/id398436747?mt=8&ign-mpt=uo%3D4">fooducate </a> 
++<a href="https://itunes.apple.com/us/app/freescanner/id560068210?mt=8">Free Scanner </a> 
++<a href="https://itunes.apple.com/us/app/open-food-facts/id588797948?mt=8">OpenFood Facts</a> 
++<a href="https://itunes.apple.com/us/app/fooducate/id398436747?mt=8&ign-mpt=uo%3D4">fooducate </a> 
  
 #Next Steps:
  (1) Wireframe mockup of app
