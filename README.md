@@ -15,9 +15,9 @@ All foods that CAFB takes in have UPC codes -- use this code to query a UPC data
  
 #Next Steps:
 
- (1) Wireframe mockup of app
- (2) Diagram flow/use cases/database backend
- (3) Stack decisions 
- (4) Database: integration with existing APIs; pull into database for inital commit 
- (5) Algorithm re: querying for UPC code to optimize for speed 
+1. Wireframe mockup of app <- idea: single screen for all features 
+2. Diagram flow/use cases/database backend
+3. Stack decisions 
+4. Database: integration with existing APIs; pull into database for inital commit 
+5. Algorithm re: querying for UPC code to optimize for speed 
 
