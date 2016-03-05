@@ -13,9 +13,13 @@ All foods that CAFB takes in have UPC codes -- use this code to query a UPC data
 + <a href="https://itunes.apple.com/us/app/open-food-facts/id588797948?mt=8">OpenFood Facts</a> 
 + <a href="https://itunes.apple.com/us/app/fooducate/id398436747?mt=8&ign-mpt=uo%3D4">fooducate </a> 
 
-**Databases**
-+ Nutritonix ($299 / mo for 5,000 scans)
-+ Open Food Facts (free)
+**UPC-Nutrition Databases**
++ [Nutritonix ($299 / mo for 5,000 scans)](http://www.nutritionix.com/)
+++ Pros: Easy to use API
+++ Cons: Price
++ [Open Food Facts (free)](http://openfoodfacts.org/)
+++ Pros: Free
+++ Cons: Some UPCs not available
 
 #Next Steps:
 
