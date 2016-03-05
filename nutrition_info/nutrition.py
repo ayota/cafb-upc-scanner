@@ -30,8 +30,10 @@ class upc_food(object):
                 apiID=self.api_id, apiKey=self.api_key,upc=self.upc_code),
                                headers={"Accept": "application/json"})
         if response.code != 200:
-            while add_question != 'Y' | add_question != 'N':
-                add_question = input('Item not found, add new item?[Y/N] ')
+            while True: 
+                add_question = raw_input('Item not found, add new item?[Y/N] ')
+                if (add_question == 'Y') | (add_question == 'N'):
+                    break
             if add_question == 'Y':
                 self.add_new_food_item()
             else:
@@ -44,17 +46,17 @@ class upc_food(object):
     
     def add_new_food_item(self):
         """
-        Add new food item, basic inputs
+        Add new food item, basic raw_inputs
         """
-        name = input('Food Name: ')
-        sugar = input('Grams of sugar: ')
-        sodium = input('Grams of sodium: ')
-        fat = input('Grams of fat: ')
-        sat_fat = input('Grams of saturated fat: ')
-        trans_fat = input('Grams of transaturated fat: ')
-        cholesterol = input('Grams of cholesterol: ')
-        fiber = input('Grams of fiber: ')
-        carbs = input('Grams of carbs: ')
+        name = raw_input('Food Name: ')
+        sugar = raw_input('Grams of sugar: ')
+        sodium = raw_input('Grams of sodium: ')
+        fat = raw_input('Grams of fat: ')
+        sat_fat = raw_input('Grams of saturated fat: ')
+        trans_fat = raw_input('Grams of transaturated fat: ')
+        cholesterol = raw_input('Grams of cholesterol: ')
+        fiber = raw_input('Grams of fiber: ')
+        carbs = raw_input('Grams of carbs: ')
         key_strings = ['name','sugars','sodium','total_fat','saturated_fat','trans_fatty_acid',
                       'cholesterol','dietary_fiber','total_carbohydrate']
         value_strings = [name, sugar, sodium, fat, sat_fat, trans_fat, cholesterol, fiber, carbs]
