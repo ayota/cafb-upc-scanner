@@ -1,6 +1,8 @@
 import os
 import unirest
 
+#This will require a Nutrionix API key and ID, which can be found here: https://developer.nutritionix.com/
+
 class upc_food(object):
     
     def __init__(self, upc_code, api_key, api_id):
