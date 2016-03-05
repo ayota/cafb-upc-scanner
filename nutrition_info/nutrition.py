@@ -3,12 +3,12 @@ import unirest
 
 class upc_food(object):
     
-    def __init__(self, upc_code):
+    def __init__(self, upc_code, api_key, api_id):
         self.upc_code = upc_code
-        self.api_key = os.environ.get('NIX_API_KEY')
-        self.api_id = os.environ.get('NIX_APP_ID')
+        self.api_key = api_key 
+        self.api_id = api_id
 #         self.food_type = food_type
-        self.get_food_item()
+        self.run()
         
     def reset_keys(self, new_key):
         """
@@ -29,21 +29,21 @@ class upc_food(object):
         response = unirest.get("https://api.nutritionix.com/v1_1/item?upc={upc}&appId={apiID}&appKey={apiKey}".format(
                 apiID=self.api_id, apiKey=self.api_key,upc=self.upc_code),
                                headers={"Accept": "application/json"})
-        if response.code != 200:
+        if response.code == 200:
+            self.food_info = response.body
+            new_dict_keys = map(lambda x:str(x).replace('nf_',''), self.food_info.keys())
+            self.food_info = dict(zip(new_dict_keys,self.food_info.values()))
+        else:
             while True: 
-                add_question = raw_input('Item not found, add new item?[Y/N] ')
+                add_question = raw_input('API Error or Item not found, add new item?[Y/N] ')
                 if (add_question == 'Y') | (add_question == 'N'):
                     break
             if add_question == 'Y':
                 self.add_new_food_item()
             else:
-                self.food_info = 'Item not found'
-        else:
-            self.food_info = response.body
-            new_dict_keys = map(lambda x:str(x).replace('nf_',''), self.food_info.keys())
-            self.food_info = dict(zip(new_dict_keys,self.food_info.values()))
+                self.food_info = response.body['error_message']
         return self.food_info
-    
+
     def add_new_food_item(self):
         """
         Add new food item, basic raw_inputs
@@ -81,5 +81,17 @@ class upc_food(object):
         """
         Change the nutrtion value of food
         """
-        setattr(self, nutrition, value)
+        pass
+        #setattr(self, nutrition, value)
     
+    def wellness_logic(self):
+        if self.sugars < 12 & self.sodium < 50 & self.fiber > 10:
+            self.wellness = 'Healthy!'
+        else:
+            self.wellness = 'Not healthy!'
+        return self.wellness
+        
+    def run():
+        self.get_food_item()
+        self.convert_dict_to_attributes()
+        self.wellness_logic()
